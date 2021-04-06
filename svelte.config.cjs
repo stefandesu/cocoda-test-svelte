@@ -18,7 +18,10 @@ module.exports = {
 
     vite: {
       ssr: {
-        // noExternal: Object.keys(pkg.dependencies || {})
+        noExternal: process.env.NODE_ENV === "production" ? Object.keys(pkg.dependencies || {}) : [],
+      },
+      define: {
+        "process.browser": true,
       },
     },
   },
