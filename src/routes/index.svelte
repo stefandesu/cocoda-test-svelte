@@ -29,15 +29,6 @@
 	  })
 	}
 
-	// import { onMount } from "svelte"
-	// onMount(() => {
-	//   setTimeout(() => {
-	//     const urlParams = new URLSearchParams(window.location.search)
-	//     urlParams.set("test", "blubb")
-	//     const url = `${window.location.href.replace(window.location.search, "")}?${urlParams.toString()}`
-	//     window.history.replaceState({}, "", url)
-	//   }, 2000)
-	// })
 	export let uri: string
 	if (uri) {
 		setSelectedUri(uri)
