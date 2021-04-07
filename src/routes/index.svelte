@@ -55,6 +55,9 @@
 					{ count }
 				</button>
 			{/each}
+			<button on:click={ () => generateItems(0) }>
+				Clear
+			</button>
 		</p>
 		{#each items as item}
 			<div><ItemName { item } isLink={ true } on:click={ () => { selected.set(item) }} /></div>
