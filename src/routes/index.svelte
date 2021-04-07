@@ -1,17 +1,5 @@
-<script context="module">
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ page, fetch, session, context }) {
-	  return {
-	    props: {
-	      uri: page.query.get("uri") ?? "",
-	    },
-	  }
-	}
-</script>
-
 <script lang="ts">
+	import { browser } from "$app/env"
 	import ConceptSearch from "$lib/ConceptSearch.svelte"
 	import ConceptDetails from "$lib/ConceptDetails.svelte"
 	import ItemName from "$lib/ItemName.svelte"
@@ -29,9 +17,12 @@
 	  })
 	}
 
-	export let uri: string
-	if (uri) {
-		setSelectedUri(uri)
+	if (browser) {
+		const urlParams = new URLSearchParams(window.location.search)
+		const uri = urlParams.get("uri")
+		if (uri) {
+			setSelectedUri(uri)
+		}
 	}
 </script>
 
