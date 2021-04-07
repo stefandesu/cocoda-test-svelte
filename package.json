@@ -27,7 +27,7 @@
 		"node": ">= 12.17.0"
 	},
 	"dependencies": {
-		"cocoda-sdk": "^1.0.11",
+		"cocoda-sdk": "^1.0.12",
 		"jskos-tools": "^1.0.17"
 	}
 }
