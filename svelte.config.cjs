@@ -13,6 +13,10 @@ module.exports = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: "#svelte",
 
+    paths: {
+      base: process.env.NODE_ENV === "production" ? process.env.BASE || "/" : "/",
+    },
+
     vite: {
       ssr: {
         noExternal: process.env.NODE_ENV === "production" ? Object.keys(pkg.dependencies || {}) : [],
